@@ -1,13 +1,20 @@
 #include <iostream>
-#include <fstream> 
+#include <fstream>
 
 using namespace std;
 
-int main() {
-    ifstream input_file("input.txt");
+int main()
+{
+    ifstream infile("input.txt");
 
+    string line;
+    getline(infile, line);
 
-    input_file.close();
+    int ans = 0;
+
+    cout << "The answer is: " << ans << endl;
+
+    infile.close();
 
     return 0;
 }

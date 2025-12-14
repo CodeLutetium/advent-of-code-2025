@@ -21,25 +21,23 @@ mkdir -p day_$day
 cd day_$day
 
 # Retrieve and save the input if not exists
-if [ ! -f "day_$day.txt" ];
+if [ ! -f "input.txt" ];
 then
     echo "Input file does not exist, pulling input file"
-    curl "https://adventofcode.com/2025/day/$day/input" --compressed  -H "Cookie: session=$SESSION_KEY" >> day_$day.txt
+    curl "https://adventofcode.com/2025/day/$day/input" --compressed  -H "Cookie: session=$SESSION_KEY" >> input.txt
 else
     echo "Input file exist"
 fi
 
 # Generate template and open with VS code
-template="with open('day_$day.txt', 'r') as f:"
-
-if [ ! -f "day$day\_1.py" ];
+if [ ! -f "challenge_1.cpp" ];
 then
-    echo $template > day$day\_1.py
+    cat ../template.cpp > challenge_1.cpp
 fi
 
-if [ ! -f "day$day\_2.py" ];
+if [ ! -f "challenge_2.cpp" ];
 then
-    echo $template > day$day\_2.py
+    cat ../template.cpp > challenge_2.cpp
 fi
 code .. # open parent directory
 

@@ -1,6 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <cassert>
+#include <vector>
+#include <algorithm>
+#include <unordered_map>
+#include <ranges>
 
 using namespace std;
 
@@ -20,8 +24,11 @@ public:
     {
         ifstream testfile("day_X/mock.txt");
         const int ANSWER = 0;
+        int result = solve(testfile);
 
-        assert(solve(testfile) == ANSWER && "Test case not passed");
+        cout << "Your result for the test case was: " << result << endl;
+        cout << "The correct answer is: " << ANSWER << endl;
+        assert(result == ANSWER && "Test case not passed");
 
         testfile.close();
     }

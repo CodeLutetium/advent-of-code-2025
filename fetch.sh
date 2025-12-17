@@ -21,7 +21,7 @@ mkdir -p day_$day
 cd day_$day
 
 # Create mock.txt if not exists
-if [ ! -f "mock.txt"]:
+if [ ! -f "mock.txt" ];
 then 
     echo "Creating mock.txt"
     touch mock.txt

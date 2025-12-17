@@ -20,6 +20,15 @@ fi
 mkdir -p day_$day
 cd day_$day
 
+# Create mock.txt if not exists
+if [ ! -f "mock.txt"]:
+then 
+    echo "Creating mock.txt"
+    touch mock.txt
+else
+    echo "mock.txt already exists, skipping creation"
+fi
+
 # Retrieve and save the input if not exists
 if [ ! -f "input.txt" ];
 then

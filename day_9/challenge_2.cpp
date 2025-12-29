@@ -143,18 +143,13 @@ public:
 
         // Compress all points
         vector<Point> pts_compressed;
-        unordered_set<Point, Point> pts_set; // store compressed pts in a set to allow for O(1) lookup time
         pts_compressed.reserve(points.size());
         for (auto &&point : points)
         {
             int32_t new_x = x_compressed[point.x];
             int32_t new_y = y_compressed[point.y];
             pts_compressed.push_back(Point(new_x, new_y));
-            pts_set.insert(Point(new_x, new_y));
         }
-
-        const size_t MAX_X = revX.size() - 1;
-        const size_t MAX_Y = revY.size() - 1;
 
         // Initialize grid and draw all lines
         vector<vector<int32_t>> grid(revY.size(), vector<int32_t>(revX.size()));
